@@ -19,7 +19,14 @@ class Magic8BallViewController < UIViewController
     end
     
     def showAnswer
-        @label.text = ["Yes", "No", "Maybe", "Try again"].sample
+        UIView.animateWithDuration(1, animations:lambda do
+            @label.alpha = 0
+        end,
+        completion:lambda do |finished|
+            @label.text = @magicBall.randomAnswer
+            @label.alpha = 1
+        end
+        )
     end
     
     def makeLabel
