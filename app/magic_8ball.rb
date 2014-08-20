@@ -8,8 +8,6 @@ class Magic8Ball
     
     def loadAnswers
         answerFile = NSBundle.mainBundle.pathForResource("answers", ofType:"json")
-        contentsOfAnswerFile = BW::JSON.parse(NSData.dataWithContentsOfFile(answerFile))
-        puts contentsOfAnswerFile
         errorPointer = Pointer.new(:object)
         
         data = NSData.alloc.initWithContentsOfFile(answerFile, options:NSDataReadingUncached, error:errorPointer)
