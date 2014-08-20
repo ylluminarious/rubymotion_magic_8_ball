@@ -1,4 +1,7 @@
 class Magic8BallViewController < UIViewController
+    
+    attr_accessor :label
+    
     def loadView
         self.view = UIImageView.alloc.init
     end
